@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spreadoperator</title>
+</head>
+
+<body>
+    <script>
+        
+        a = [10, 20]
+        b = [30, 40]
+        c = [...a, ...b]
+        console.log(c)
+       
+        obj1 = { id: 103, name: "rajat" }
+        obj2 = { city: "indore", state: "M.P" }
+        obj3 = { ...obj1, ...obj2 }
+        console.log(obj3)
+       
+        sch=[{name:"hello"},{city:"indore"},{state:"M.P"}]
+        coll={...sch[2],...sch[1],...sch[2]}
+        console.log(coll);
+      
+    </script>
+
+</body>
+
+</html>

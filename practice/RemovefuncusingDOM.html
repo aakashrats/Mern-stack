@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #p1{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    </div>
+    <input type="text" id="field">
+    <input type="button" value="click..." onclick="createH1()">
+    <script>
+        var n=1;
+          function createH1() {
+           var btnId="btn"+n;
+           var h1Id="head"+n;
+           n++;
+            var h1=document.createElement("h1");
+            var btn=document.createElement("input");
+            var data=document.getElementById("field").value;
+            btn.setAttribute("type","button");
+            btn.setAttribute("value","remove"+data);
+            btn.setAttribute("id",btnId);
+            btn.onclick=()=>{
+                
+                removeElements(h1Id,btnId);
+              
+            }
+            h1.innerHTML=data;
+            h1.setAttribute("id",h1Id)
+            var container=document.getElementById("container");
+            container.appendChild(h1);
+            container.appendChild(btn);
+          }
+          function removeElements(headId,btnId) {
+            var container=document.getElementById("container");
+            var h1=document.getElementById(headId);
+            var btn=document.getElementById(btnId);
+            container.removeChild(h1);
+            container.removeChild(btn);
+            
+          }
+    </script>
+</body>
+</html>

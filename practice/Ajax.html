@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="fetch data" onclick="fetchdata()">
+    <table border="1" cellpadding="10" cellspacing="0" id="table">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+        
+        </tr>
+    </table>
+<script>
+    
+    function fetchdata(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET"," https://jsonplaceholder.typicode.com/users ");
+        xhr.onreadyStatechange = () =>{
+          if(xhr.readyState == 4 && xhr.status == 200) {
+            const data=JSON.parse(xhr.responseText)
+            console.log(data);
+            var table=document.getElementById('table');
+            for(i=0;i<data.length;i++){
+                var tr=document.createElement("tr")
+                var idTd=document.createElement("td")
+                var nameTd=document.createElement("td")
+                var emailTd=document.createElement("td")
+                var phoneTd=document.createElement("td")
+               // var addressTd=document.createElement("td")
+                idTd.innerHTML=data[i].id; 
+                nameTd.innerHTML=data[i].name;
+                emailTd.innerHTML=data[i].email;
+                phoneTd.innerHTML=data[i].phone;
+                //addressTd.innerHTML=data[i].address;
+                tr.appendChild(idTd)
+                tr.appendChild(nameTd)
+                tr.appendChild(emailTd)
+                tr.appendChild(phoneTd)
+               // tr.appendChild(addressTd)
+                table.appendChild(tr)
+             
+            
+            }
+          }
+        }
+      xhr.send();
+    }    
+</script>    
+</body>
+</html>

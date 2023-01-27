@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+        function show() {
+            console.log("hello")
+        }
+       
+
+        obj = show;
+        obj()
+        show();
+
+       
+
+        function hello(x) {
+            console.log(x);
+            x();
+        }
+
+        hello(show);
+        function goodmorning(x){
+            console.log("good morning")
+            x(goodnight);
+        }
+        function goodevening(y){
+            console.log("good evening");
+            y();
+        }
+        function goodnight(){
+            console.log("good night")
+        }
+        goodmorning(goodevening)
+
+         var obj1= function (){
+            console.log("hello i am ano");
+         }
+         obj1();
+
+        
+         
+          var obj2=()=>console.log("hello i am fat arrow");
+          obj2();
+      
+
+         var obj3=arg=>console.log("with arg fat arrow");
+         obj3(6);
+
+        
+        var obj4=arg=>console.log(arg)
+
+    </script>
+
+</body>
+
+</html>

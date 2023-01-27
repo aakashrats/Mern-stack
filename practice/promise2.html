@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+ function fetchid(){
+    return new Promise((resolve,reject)=>{
+        console.log("fetching ids....")
+        var ids=[101,102,103,104,105]
+        setTimeout(()=>{
+            if(ids.length>0){
+                resolve(ids)
+            }else{
+                reject("ERROR")
+            }
+        },3000)
+    })
+ }
+
+ function fetchdata(userid){
+    return new Promise((resolve,reject)=>{
+        console.log("fetching data..")
+        var data={id:userid,name:"anuj",age:19}
+        setTimeout((id) => {
+            if(data){
+                console.log(`fetching data of id-${id}`);
+                resolve(data);
+            }else{
+            reject("ERROR")
+            }
+        }, 5000,userid);
+    })
+ }
+
+ function checkage(age){
+    return new Promise((resolve,reject)=>{
+        setTimeout((userage)=>{
+        if(userage>=18){
+            console.log("Checking age...")
+            console.log(`Age is ${userage}`)
+            resolve("elegible")
+        }else{
+            reject("ERROR")}
+    },5000,age) 
+ })}
+ fetchid().then((ids)=>{
+    console.log(ids);
+   return fetchdata(ids[0])
+ }).then((userdata)=>{
+    console.log(userdata)
+    return checkage(userdata.age)
+ }).then((age)=>{
+    console.log(age)
+ })
+ .catch((msg)=>{
+    console.log(msg)
+ })
+
+
+
+    </script>
+    
+</body>
+</html>

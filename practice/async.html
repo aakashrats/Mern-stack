@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+        setTimeout(()=>{console.log("hello")},3000,
+        )
+        console.log("bye")
+       
+
+        function sum(a,b){
+            console.log("inside sum")
+            console.log(a+b);
+        }
+        function mul(a,b){
+            console.log("inside mul")
+            console.log(a*b);
+        }
+        function sub(a,b){
+            console.log("inside sub")
+            console.log(a-b);
+        }
+        //mul=>5sec
+        //add=>2sec
+        //sub=>3sec
+
+        setTimeout(mul,5000,3,4);
+
+
+        console.log("yoyo")
+        setTimeout(sum,2000,3,4);
+        console.log("honey singh")
+        setTimeout(sub,3000,5,4);
+        console.log("badsha")
+        
+        
+        setTimeout(()=>{
+            console.log("fetching data...");
+            var ids=[10,20,30,40,50]
+            console.log(ids);
+            setTimeout((id)=>{
+                console.log("fetching id...");
+                var data={id:id,name:"anuj",phone:"476573474",age:25}
+                console.log(data);
+                setTimeout((age)=>{
+                    console.log("checking age...")
+                    if(age>=18){
+                        console.log("elegible");
+                    }
+                    else{
+                        console.log("not elegible");
+                    }
+                },8000,data.age)
+            },10000,ids[2])
+        },11000)
+        
+    </script>
+</body>
+</html>

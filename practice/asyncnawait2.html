@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <Script>
+       
+
+        function fetchid() {
+            return new Promise((resolve, reject) => {
+                console.log("fetching ids....")
+                var ids = [101, 102, 103, 104, 105]
+                setTimeout(() => {
+                    if (ids.length > 0) {
+                        resolve(ids)
+                    } else {
+                        reject("ERROR")
+                    }
+                }, 3000)
+            })
+        }
+        function fetchdata(userid) {
+            return new Promise((resolve, reject) => {
+                console.log("fetching data..")
+                var data = { id: userid, name: "anuj", age: 19 }
+                setTimeout((id) => {
+                    if (data) {
+                        console.log(`fetching data of id-${id}`);
+                        resolve(data);
+                    } else {
+                        reject("ERROR")
+                    }
+                }, 5000, userid);
+            })
+        }
+
+        function checkage(age) {
+            return new Promise((resolve, reject) => {
+                setTimeout((userage) => {
+                    if (userage >= 18) {
+                        console.log("Checking age...")
+                        console.log(`Age is ${userage}`)
+                        resolve("elegible")
+                    } else {
+                        reject("ERROR")
+                    }
+                }, 5000, age)
+            })
+        }
+       
+        async function handlepromise(){
+            try{
+                var id=await fetchid();
+                console.log(id);
+                var userdata=await fetchdata(id[0]);
+                console.log(userdata);
+                var age=await checkage(userdata.age)
+                console.log(age);
+            }
+            catch(error){console.log(error)}
+         }
+         handlepromise();
+    </Script>
+</body>
+
+</html>
+       

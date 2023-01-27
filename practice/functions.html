@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+
+function nameoffunction(arguments){
+   
+}
+
+function findmax(a,b) {
+    if(a>b){
+        return a;
+         
+    }
+        return b;
+   
+}
+
+res=findmax(3,4)
+console.log(res);
+console.log("pratice of functions")
+function findmin(a,b) {
+    if(a<b){
+        return a;
+        
+    }
+        return b;
+  
+}
+
+res=findmin(3,4)
+console.log(`Min. number is  ${res}`);
+
+
+function Square(a) {
+    b=a*a;
+    return b;
+}
+
+res=Square(3)
+console.log(`square of a number is ${res}`);
+
+function cube(a) {
+    b=a*a*a;
+    return b;
+}
+
+res=cube(3)
+console.log(`Cube of a number is ${res}`);
+
+function Areaofsq(a) {
+    b=a*a;
+    return b;
+}
+
+res=Areaofsq(4)
+console.log(`Area of square is ${res}`);
+
+function Areaofcircle(a) {
+    b=(3.14)*a*a;
+    return b;
+}
+res=Areaofcircle(10)
+console.log(`Area  of circle is ${res}`);
+
+
+function Sum() {
+    sum=0;
+    for(i=1;i<=15;i++){
+        sum=sum+i
+    }
+    return sum;
+}
+res=Sum()
+console.log(`Sum  of numbers between 1-15 is  ${res}`);
+
+function evensum(a,b){
+    for(i=a;i<=b;i++){
+    if(i%2==0){
+        sum=sum+i;
+    }
+    
+}
+console.log(`Sum of even number is ${sum}`)
+}
+evensum(1,100)
+
+
+function maxele(arr){
+    max=arr[0]
+    for(i=1;i<arr.length;i++){
+        if(max<arr[i]){
+            max=arr[i]
+        }
+    }
+    console.log(`Maximum number in array is ${max}`)
+}
+maxele(arr=[10,20,50,70,30])
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+
+<body>
+    <script>
+       
+        obj = {
+            empid: 3103,
+            empname: "AAkash",
+            car: true,
+            contactno: ["7528576384", "23842356834"],
+            address: { houseno: 123, street: "kagargoane", city: "indore", state: "m.p" }
+        }
+        console.log(obj)
+        console.log(obj.car)
+        console.log(obj.contactno[1])
+        console.log(obj.address.houseno)
+      
+        sch = [
+            {
+                name: "aditya",
+                rollno: 78,
+                marks: 100,
+                phone: ["12345235", "2342345", "47568568"],
+                address: { houseno: 123, street: "suratghr", city: "indore", state: "m.p" }
+            }, {
+                name: "akshay",
+                rollno: 79,
+                marks: 80,
+                phone: ["55555", "444444", "3333333"],
+                address: { houseno: 242, street: "ramghr", city: "ratlam", state: "m.p" }
+            }, {
+                name: "ankit",
+                rollno: 81,
+                marks: 77,
+                phone: ["2222222", "1111111", "000000000"],
+                address: { houseno: 568, street: "rajghr", city: "bhopal", state: "m.p" }
+            }
+        ]
+console.log(sch)
+console.log(sch[2])
+console.log(sch[2].name,sch[2].marks)
+
+for(i=0;i<sch.length;i++){
+console.log(sch[i].name,sch[i].address.city)
+for(j=0;j<sch[i].phone.length;j++){
+    console.log(`phone number ${j+1}-${sch[i].phone[j]}`)
+}
+}
+
+topper=sch[0]
+for(i=1;i<sch.length;i++){
+    console.log(sch[i].marks);
+    if(topper.marks<sch[i].marks){
+        topper=sch[i]
+    }
+}
+console.log(topper)
+
+
+newobj={name:"harry",name:"rajat"}
+console.log(newobj.name);
+    </script>
+</body>
+
+</html>
